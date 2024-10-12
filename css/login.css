@@ -1,0 +1,23 @@
+/* login.css */
+
+/* Vídeo de fundo */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1; /* Para garantir que o vídeo fique atrás do conteúdo */
+}
+
+/* Centralizar e ajustar a largura do formulário de login */
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro para melhorar a visibilidade do texto */
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Main Container -->
+    <div class="max-w-5xl mx-auto">
+
+        <!-- Error Message Section -->
+        <section id="errorMessage" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <strong class="font-bold">Error:</strong>
+            <span class="block sm:inline" id="errorText"></span>
+        </section>
+
+        <!-- Todo List Section -->
+        <section class="bg-white shadow-md rounded-lg overflow-hidden">
+            <header class="px-6 py-4 flex justify-between items-center">
+                <h1 class="text-xl font-bold">Todo List</h1>
+                <button id="openFormButton" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Add Task</button>
+            </header>
+
+            <p class="text-gray-600 px-6 pb-4">
+                A list of tasks assigned to users, with the option to update the status from pending to completed.
+            </p>
+
+            <!-- Task List Table -->
+            <div class="overflow-x-auto">
+                <table class="min-w-full text-left border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="border px-4 py-2">User</th>
+                            <th class="border px-4 py-2">Task Title</th>
+                            <th class="border px-4 py-2">Status</th>
+                            <th class="border px-4 py-2"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasks-table">
+                        <!-- Task rows will be dynamically generated here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Add Task Form Section -->
+        <section id="addTaskForm" class="bg-white shadow-md rounded-lg p-6 mt-6 hidden">
+            <h2 class="text-xl font-bold mb-4">Add New Task</h2>
+            <form id="taskForm">
+                <div class="mb-4">
+                    <label for="taskUser" class="block text-gray-700">User</label>
+                    <input type="text" id="taskUser" class="w-full px-3 py-2 border rounded-lg" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="taskTitle" class="block text-gray-700">Task Title</label>
+                    <input type="text" id="taskTitle" class="w-full px-3 py-2 border rounded-lg" required minlength="3">
+                </div>
+
+                <div class="mb-4">
+                    <label for="taskStatus" class="block text-gray-700">Status</label>
+                    <select id="taskStatus" class="w-full px-3 py-2 border rounded-lg">
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Add Task</button>
+                    <button type="button" id="closeFormButton" class="text-gray-500">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+    </div>
+
+    <!-- Main JS File -->
+    <script src="js/app.js" type="module"></script>
+
+</body>
+</html>
