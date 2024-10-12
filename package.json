@@ -1,0 +1,15 @@
+{
+  "name": "front-task-manager",
+  "version": "1.0.0",
+  "description": "front end feito para o todo-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}
