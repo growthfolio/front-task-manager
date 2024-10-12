@@ -1,6 +1,7 @@
 import { fetchTasks, addTask, updateTaskStatus } from './api.js';
 import { renderTasks, showError } from './dom.js';
 
+
 document.addEventListener("DOMContentLoaded", async () => {
     const taskTableElement = document.getElementById("tasks-table");
     const taskForm = document.getElementById("taskForm");
@@ -17,13 +18,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     taskForm.addEventListener("submit", async function(event) {
         event.preventDefault();
 
-        const user = document.getElementById("taskUser").value;
         const title = document.getElementById("taskTitle").value;
         const status = document.getElementById("taskStatus").value;
 
         try {
-            const newTask = await addTask({ user, title, status });
-            const newRow = createTaskRow(newTask.user, newTask.title, newTask.status, newTask.id, handleStatusToggle);
+            const newTask = await addTask({ title, status });
+            const newRow = createTaskRow(newTask.title, newTask.status, newTask._id, handleStatusToggle);
             taskTableElement.appendChild(newRow);
             closeForm();
         } catch (error) {
