@@ -8,6 +8,7 @@ export async function login(username, password) {
             },
             body: JSON.stringify({ username, password })
         });
+
         const data = await response.json();
 
         if (response.ok) {
@@ -32,10 +33,12 @@ export async function register(username, password) {
             },
             body: JSON.stringify({ username, password })
         });
+
         const data = await response.json();
 
         if (response.ok) {
-            return await login(username, password); // Auto login after registration
+            // Registration successful, but no auto login
+            return data; // Return registration success message
         } else {
             throw new Error(data.message || 'Failed to register');
         }

@@ -14,14 +14,16 @@ export async function fetchTasks() {
     }
 }
 
-// Add a new task (requires authentication)
+// Add a new task (with token, no Bearer)
 export async function addTask(taskData) {
     try {
+        const token = getToken(); // Get token from localStorage
+        console.log('Token being sent:', token); // Verifique o token no console
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${getToken()}` // Requires authentication
+                'Authorization': token // Send the token directly
             },
             body: JSON.stringify(taskData)
         });
@@ -33,14 +35,12 @@ export async function addTask(taskData) {
     }
 }
 
-// Update task status (requires authentication)
 export async function updateTaskStatus(taskId, newStatus) {
     try {
         const response = await fetch(`${API_URL}/${taskId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${getToken()}` // Requires authentication
             },
             body: JSON.stringify({ status: newStatus }) // Only updating the status
         });
@@ -52,14 +52,12 @@ export async function updateTaskStatus(taskId, newStatus) {
     }
 }
 
-
-// Delete a task (requires authentication)
 export async function deleteTask(taskId) {
     try {
         const response = await fetch(`${API_URL}/${taskId}`, {
             method: 'DELETE',
             headers: {
-                'Authorization': `Bearer ${getToken()}` // Requires authentication
+                'Authorization': `${getToken()}` // Requires authentication
             }
         });
         if (!response.ok) throw new Error('Failed to delete task');
