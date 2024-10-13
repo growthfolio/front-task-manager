@@ -1,19 +1,52 @@
 #bg-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+#navbar {
+  /* background-color: #020a2e57; */
+  overflow: hidden;
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
 }
 
+/* Estilização dos botões da navbar */
+.navbar-btn {
+  background-color: #020a2e57; /* Cor de fundo inicial translúcida */
+  color: #ffffff; /* Cor do texto */
+  padding: 8px 16px; /* Padding */
+  border-radius: 6px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para hover */
+}
+
+.navbar-btn:hover {
+  background-color: #ffffffd5; /* Muda a cor do fundo para branco ao passar o mouse */
+  color: #020a2e; /* Muda a cor do texto para um azul escuro */
+}
+
+.navbar-btn:active {
+  background-color: #020a2e57; /* Cor quando o botão é pressionado */
+  color: #ffffff; /* Cor do texto ao pressionar */
+}
+
+
 .login-container {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.5); /* Fundo escuro para melhorar a visibilidade do texto */
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fundo escuro para melhorar a visibilidade do texto */
 }
