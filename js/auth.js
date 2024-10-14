@@ -1,7 +1,7 @@
 // Function to handle user login
 export async function login(username, password) {
   try {
-    const response = await fetch('http://localhost:3000/users/login', {
+    const response = await fetch('https://node-task-manager-548247182610.us-central1.run.app/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ export async function login(username, password) {
 // Function to handle user registration
 export async function register(username, password) {
   try {
-    const response = await fetch('http://localhost:3000/users/register', {
+    const response = await fetch('https://node-task-manager-548247182610.us-central1.run.app/users/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

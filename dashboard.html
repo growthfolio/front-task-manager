@@ -21,11 +21,24 @@
           </div>
       </div>
   </nav>
-
-  
     <!-- Main Container -->
     <div class="max-w-5xl mx-auto mt-6 pt-6">
-      <!-- Error Message Section -->
+      <!-- Todo List Section -->
+      <section class="bg-white shadow-md rounded-lg overflow-hidden">
+        <header class="px-4 sm:px-6 py-4 flex justify-between items-center">
+          <h1 class="text-lg sm:text-xl font-bold">Todo List Dashboard</h1>
+          <button
+            id="openFormButton"
+            class="bg-blue-500 text-white px-3 sm:px-4 py-2 rounded-lg"
+          >
+            Adicionar Tarefa
+          </button>
+        </header>
+
+        <p class="text-gray-600 px-4 sm:px-6 pb-4">
+          Uma simples lista de tarefas.
+        </p>
+             <!-- Error Message Section -->
   <section
   id="errorMessage inset-x-0 top-0 items-center"
   class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4"
@@ -42,22 +55,6 @@
       >
         <div class="loader"></div>
       </div>
-
-      <!-- Todo List Section -->
-      <section class="bg-white shadow-md rounded-lg overflow-hidden">
-        <header class="px-4 sm:px-6 py-4 flex justify-between items-center">
-          <h1 class="text-lg sm:text-xl font-bold">Todo List Dashboard</h1>
-          <button
-            id="openFormButton"
-            class="bg-blue-500 text-white px-3 sm:px-4 py-2 rounded-lg"
-          >
-            Adicionar Tarefa
-          </button>
-        </header>
-
-        <p class="text-gray-600 px-4 sm:px-6 pb-4">
-          Uma simples lista de tarefas.
-        </p>
 
         <!-- Task List Table -->
         <div class="overflow-x-auto">
@@ -119,7 +116,7 @@
       </section>
     </div>
     
-    <script src="js/dom.js" type="module"></script>
     <script src="js/app.js" type="module"></script>
+    <script src="js/dom.js" type="module"></script>
   </body>
 </html>

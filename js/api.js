@@ -1,6 +1,6 @@
 import { getToken } from './auth.js';
 
-const API_URL = 'http://localhost:3000/tasks';
+const API_URL = 'https://node-task-manager-548247182610.us-central1.run.app/tasks';
 
 export async function fetchTasks() {
   try {
